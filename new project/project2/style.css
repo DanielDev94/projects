@@ -1,0 +1,1502 @@
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc; /* Very light modern gray/blue */
+  color: #1e293b;
+}
+
+/* --- Topbar Navigation --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  position: fixed; /* Makes it float */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Starts transparent */
+  z-index: 1000;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Default Link Colors (White text over the green gradient) */
+.nav-links a,
+.track-order-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+/* --- Logo Swapping Logic --- */
+/* By default, show the white logo and hide the dark one */
+.logo-white {
+  display: block;
+}
+.logo-dark {
+  display: none;
+}
+
+/* --- The "Scrolled" State (Triggered by JS) --- */
+.topbar.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* When scrolled, hide white logo and show dark logo */
+.topbar.scrolled .logo-white {
+  display: none;
+}
+.topbar.scrolled .logo-dark {
+  display: block;
+}
+
+/* When scrolled, change text links to dark gray */
+.topbar.scrolled .nav-links a,
+.topbar.scrolled .track-order-link {
+  color: #334155;
+}
+
+/* Hover effects for links */
+.nav-links a:hover,
+.topbar.scrolled .nav-links a:hover {
+  color: #10b981;
+}
+
+/* --- The Magic Logo Filter --- */
+
+/* 1. When the navbar is transparent, turn the logo pure white */
+.nav-logo {
+  /* This turns the black/green pixels completely white */
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* 2. When the user scrolls and the navbar turns white, remove the filter so the logo's true colors show */
+.topbar.scrolled .nav-logo {
+  filter: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #10b981; /* OVZA Green */
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.track-order-link {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+}
+
+.contact-btn {
+  text-decoration: none;
+  background-color: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #059669;
+}
+
+/* --- Hero Section --- */
+/* --- Hero Section Fix --- */
+.hero {
+  /* Add the signature OVZA green gradient */
+  background: linear-gradient(135deg, #a7f3d081 0%, #6ee7b7 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: contain;
+  background-position: 0 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 40em; /* Pushes text below the navbar */
+  width: 100%; /* Ensures the green stretches edge-to-edge */
+}
+
+.bg-img {
+  display: inline-flex;
+  float: left;
+  z-index: 1;
+  margin: 0%;
+  padding-top: 50px;
+  position: absolute;
+  top: 2;
+  right: -20%;
+  opacity: 0.5;
+}
+
+.others {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  padding: 140px 5% 100px 5%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* left: 50;
+  top: 50;
+  transform: translate(-50, -50); */
+}
+
+.intro {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #0f172a;
+  opacity: 1;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+.ready p {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ready .begin {
+  color: #10b981;
+}
+
+/* --- Search Bar Area --- */
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.select-country {
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background-color: #e2e8f0;
+  margin: 0 10px;
+}
+
+.searchbar {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.register-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #059669;
+}
+
+/* --- Bottom Hero Elements --- */
+.sponsorlogo {
+  margin-bottom: 20px;
+}
+
+.support-countries {
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+}
+
+/* --- Dropdown Menu Styles --- */
+.custom-dropdown {
+  position: relative;
+}
+
+.dropdown-list {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  width: 220px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* We will toggle this class with JavaScript */
+.dropdown-list.show {
+  display: block;
+}
+
+.dropdown-list li {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #334155;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-list li:hover {
+  background-color: #f1f5f9;
+  color: #10b981;
+}
+
+/* --- Services Section --- */
+.services-section {
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.services-header p {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* CSS Grid for the cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Gentle lift effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  color: #10b981;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.learn-more {
+  text-decoration: none;
+  color: #10b981;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.learn-more i {
+  font-size: 1.2rem;
+  margin: 0 0 0 5px; /* Reset the margin from the card's main icon */
+  transition: transform 0.3s ease;
+}
+
+.learn-more:hover i {
+  transform: translateX(5px); /* Arrow slides right on hover */
+}
+
+/* --- Track Order Modal --- */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    15,
+    23,
+    42,
+    0.7
+  ); /* Dark semi-transparent background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+.modal-content p {
+  color: #64748b;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.security-challenge {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.security-challenge p {
+  color: #0f172a;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.math-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.math-row input {
+  width: 80px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 15px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.retrieve-id {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #10b981;
+  text-decoration: none;
+}
+
+/* --- Services Carousel --- */
+/* Replace your old .services-grid CSS with this */
+.carousel-wrapper {
+  overflow: hidden; /* Hides the native scrollbar */
+  width: 100%;
+  cursor: grab; /* Shows the user they can drag it */
+}
+
+.carousel-wrapper:active {
+  cursor: grabbing;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px; /* Room for shadows */
+  /* Hide scrollbar for Chrome/Safari/Firefox */
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.service-card {
+  min-width: 320px; /* Forces cards to stay wide instead of squishing */
+  flex-shrink: 0; /* Prevents shrinking */
+  /* (Keep the rest of your existing .service-card styles here: background, padding, box-shadow, etc.) */
+}
+
+/* --- Countries Banner --- */
+.countries-banner-section {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.countries-banner {
+  /* This creates the soft mint green look */
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  border-radius: 24px;
+  padding: 50px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  color: #0f172a;
+  background: #94e7b9
+    url(https://ovza.com/wp-content/uploads/2025/06/stats-new.jpg) no-repeat
+    center center / cover !important;
+}
+
+.banner-title {
+  flex: 1; /* Takes up 1 part of the space */
+}
+
+.banner-title h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.banner-text {
+  flex: 1.5; /* Takes up 1.5 parts of the space (slightly wider) */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.banner-text p {
+  margin-bottom: 20px;
+}
+
+.banner-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .countries-banner {
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+  }
+}
+
+/* --- Map Area --- */
+.map-section {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-container {
+  position: relative; /* Crucial: This keeps the pins inside the map */
+  width: 100%;
+}
+
+.world-map-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8; /* Fades the map slightly so pins pop out */
+}
+
+/* The standard Pin style */
+.map-pin {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #10b981; /* OVZA Green */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+  cursor: pointer;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centers the pin exactly on the coordinate */
+}
+
+/* The Label that appears on hover */
+.map-pin span {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.map-pin:hover span {
+  display: block; /* Show text on hover */
+}
+
+/* --- Pin Locations (Adjust percentages to fit your specific map image) --- */
+.panama-pin {
+  top: 55%;
+  left: 28%;
+}
+.bvi-pin {
+  top: 48%;
+  left: 32%;
+}
+.seychelles-pin {
+  top: 62%;
+  left: 63%;
+}
+
+/* --- Regional Country Lists --- */
+.regions-container {
+  display: grid;
+  /* Creates a responsive 3-column layout that auto-collapses on small screens */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0; /* A subtle line separating the map from the lists */
+}
+
+.region-column h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Adds a small green underline beneath the region titles */
+.region-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #10b981;
+  border-radius: 2px;
+}
+
+.country-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Specific class to split larger lists (like the Americas) into two columns */
+.country-list.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.country-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #334155;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+  cursor: default;
+}
+
+.country-list li:hover {
+  color: #10b981;
+  transform: translateX(5px); /* Gentle slide to the right on hover */
+}
+
+.country-list li span {
+  font-size: 1.3rem; /* Makes the emoji flags slightly larger */
+  background: #f8fafc;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+}
+
+/* --- Detailed Services Section --- */
+.detailed-services-section {
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The Row that holds the text and image */
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px; /* Space between each service */
+}
+
+/* This is the magic class that flips the layout for the middle item */
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* --- The Text Card Design (From your screenshot) --- */
+.service-text-card {
+  flex: 1; /* Takes up half the row */
+  border: 1.5px solid #86efac; /* That specific soft green border */
+  border-radius: 24px;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1fae5; /* Very light green background */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.service-icon i {
+  font-size: 1.5rem;
+  color: #059669; /* Darker green for the icon */
+}
+
+.service-text-card h3 {
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.service-text-card p {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.service-text-card p:last-child {
+  margin-bottom: 0; /* Removes extra space at the bottom of the card */
+}
+
+/* --- The Image Box --- */
+.service-image-box {
+  flex: 1.2; /* Makes the image slightly wider than the text card */
+  display: flex;
+  justify-content: center;
+}
+
+.service-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px; /* Optional: rounds the illustration corners */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  /* On smaller screens, stack them vertically instead of side-by-side */
+  .service-row,
+  .service-row.reverse {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .service-image-box {
+    width: 100%;
+  }
+}
+
+/* --- Why Work With OVZA Section --- */
+.why-ovza-section {
+  /* This creates that soft teal gradient background */
+  background: linear-gradient(135deg, #a7f3d0 0%, #bbf7d0 100%);
+  padding: 80px 5%;
+}
+
+.why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.why-header h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.why-header p {
+  color: #334155;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* The 3-Column Grid setup */
+.why-grid {
+  display: grid;
+  /* This ensures exactly 3 columns on desktop, auto-adjusting on smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The Individual Cards */
+.why-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Creating the custom illustration look */
+.card-illustration {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+/* This ::before element creates the soft green "blob" shape behind the icons */
+.card-illustration::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  background-color: #ecfdf5; /* Very light green */
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Makes it look like an organic blob */
+  z-index: 1;
+}
+
+.card-illustration i {
+  font-size: 3rem;
+  color: #059669; /* OVZA dark green */
+  z-index: 2; /* Keeps the icon above the blob */
+  margin-left: 15px;
+}
+
+.why-card h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.why-card p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* =========================================
+   TESTIMONIALS SECTION
+========================================= */
+.testimonials-section {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.testimonials-header h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.testimonials-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-card {
+  /* Soft green gradient matching your screenshot */
+  background: linear-gradient(135deg, #ccfbf1 0%, #a7f3d0 100%);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Adds a slight tilt to the cards like in the image */
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.review-card:nth-child(2) {
+  transform: rotate(1deg);
+} /* Tilts middle card opposite way */
+.review-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.review-text {
+  font-size: 1.1rem;
+  color: #0f172a;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.stars {
+  color: #10b981;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.client-name {
+  font-weight: 800;
+  color: #0f172a;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  padding-top: 15px;
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+.about-section {
+  padding: 80px 5%;
+  background-color: #f8fafc; /* Very light gray to separate from testimonials */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-icon {
+  font-size: 2.5rem;
+  color: #10b981;
+  margin-bottom: 15px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.about-text p {
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-btn {
+  display: inline-block;
+  background-color: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: #059669;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile wrap for About Section */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   STATS BANNER SECTION
+========================================= */
+.stats-banner-section {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-banner {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  border-radius: 20px;
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows stacking on very small screens */
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: #064e3b; /* Darker green for contrast */
+}
+
+.stat-text h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.stat-text p {
+  color: #0f172a;
+  font-size: 1rem;
+  margin: 0;
+  max-width: 150px;
+}
+
+/* =========================================
+   VIDEO GUIDE & RESOURCES SECTION
+========================================= */
+.video-guide-section {
+  /* Soft mint green gradient background matching the image */
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  padding: 80px 5%;
+}
+
+.video-guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-guide-header {
+  margin-bottom: 50px;
+}
+
+.video-guide-header h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+/* Makes the second half of the text white/translucent */
+.video-guide-header .text-light {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.video-guide-content {
+  display: flex;
+  gap: 30px;
+  align-items: stretch; /* Makes both sides the same height if possible */
+}
+
+/* --- Left Side: Video Box --- */
+.video-player-box {
+  flex: 1.8; /* Takes up roughly 65% of the width */
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative; /* Crucial for absolute positioning the play button */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex; /* Ensures image fills the box smoothly */
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the button perfectly */
+  background-color: rgba(15, 23, 42, 0.6);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.play-button:hover {
+  background-color: rgba(15, 23, 42, 0.8);
+  transform: translate(-50%, -50%) scale(1.1); /* Slight pop effect */
+}
+
+/* --- Right Side: Resource Cards --- */
+.resource-cards-box {
+  flex: 1; /* Takes up the remaining 35% */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resource-card {
+  background-color: #bbf7d0; /* Slightly darker mint for the cards */
+  border: 1px solid #86efac;
+  border-radius: 20px;
+  padding: 30px;
+  flex: 1; /* Makes both cards stretch to equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  background-color: #a7f3d0;
+}
+
+.resource-icon {
+  background-color: #064e3b; /* Dark green circle */
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.resource-text h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.resource-text a {
+  color: #0f172a;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: 1.05rem;
+}
+
+.resource-text a:hover {
+  color: #064e3b;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .video-guide-header h2 {
+    font-size: 2rem;
+  }
+
+  .video-guide-content {
+    flex-direction: column; /* Stacks the video and cards on small screens */
+  }
+
+  .video-player-box {
+    min-height: 300px; /* Gives the video some height when stacked */
+  }
+}
+
+/* =========================================
+   NEWSLETTER SECTION
+========================================= */
+.newsletter-section {
+  padding: 40px 5% 80px 5%; /* Extra padding on bottom before footer */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsletter-container {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  border-radius: 24px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.newsletter-content {
+  flex: 1.2;
+}
+
+.newsletter-content h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.newsletter-content p {
+  color: #0f172a;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #059669;
+}
+
+.follow-text {
+  font-weight: 600;
+  margin-bottom: 15px !important;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #0f172a;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #10b981;
+}
+
+.newsletter-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   FOOTER SECTION
+========================================= */
+.site-footer {
+  background-color: #34d399; /* Solid bright mint green */
+  color: #ffffff;
+  padding: 80px 5% 30px 5%;
+  position: relative;
+}
+
+/* Styling the About Us link so it looks like a heading but acts like a link */
+.footer-heading-link {
+  text-decoration: none;
+  color: #064e3b; /* Dark green to match the other headers */
+  display: block;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-heading-link:hover {
+  opacity: 0.7;
+}
+
+/* Forcing the Bitcoin badge to take up its own full line */
+.bitcoin-badge {
+  width: 100%;
+  max-width: 215px;
+  margin-top: 5px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: white; /* Dark green for headers */
+}
+
+.footer-col p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Payment Icons Grid */
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.payment-methods img {
+  border-radius: 4px;
+}
+
+/* Footer Links */
+.links-col a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.links-col a:hover {
+  opacity: 0.7;
+}
+
+.policy-col .social-icons a {
+  color: #ffffff; /* White socials in footer */
+}
+
+/* Footer Bottom Strip */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.proudly-rooted {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================
+   FLOATING CHAT BUTTON
+========================================= */
+.floating-chat-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #10b981;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.floating-chat-btn:hover {
+  transform: scale(1.1);
+  background-color: #059669;
+}
+
+/* Mobile Responsiveness for Newsletter/Footer */
+@media (max-width: 900px) {
+  .newsletter-container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+}

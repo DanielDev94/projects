@@ -1,0 +1,30 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: sans-serif;
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode button {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}

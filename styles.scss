@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  .header {
+    width: 100%;
+    border: 1px solid black;
+
+    .mobile {
+      display: flex;
+      padding: 10px;
+      font-family: sans-serif;
+      justify-content: space-between;
+      background-color: black;
+      color: white;
+      position: relative;
+      .side {
+        display: flex;
+        align-items: center;
+        // border: 1px solid rgb(255, 0, 0);
+        width: 190px;
+        .nav {
+          display: block;
+
+          .nav_bar {
+            display: block;
+            // border: 1px solid black;
+          }
+        }
+      }
+
+      .others {
+        display: flex;
+        // border: 1px solid black;
+        width: 270px;
+        justify-content: space-between;
+        align-items: center;
+
+        .createDiv {
+          border: 1px solid white;
+          padding: 5px;
+          border-radius: 12px;
+          .plus {
+            margin-right: 5px;
+          }
+        }
+        .user {
+          border: 2px solid rgb(208, 208, 208);
+          padding: 10px;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          cursor: pointer;
+          background-color: rgb(160, 160, 236);
+        }
+      }
+      .logo {
+        height: 20px;
+        margin-left: 15px;
+        display: flex;
+
+        .countrycode {
+          font-family: sans-serif;
+          font-size: 10px;
+          padding-left: 4px;
+        }
+        // border: 1px solid black;
+      }
+
+      .sidebar {
+        // border: 1px solid rgb(204, 14, 14);
+        position: absolute;
+        height: 500px;
+        width: 200px;
+        left: -1%;
+        top: 100%;
+        padding-left: 6px;
+        background-color: black;
+        // right:;
+        .sectionA {
+          border: 1px solid white;
+          height: 20%;
+        }
+        .sectionB {
+          border: 1px solid white;
+          height: 60%;
+        }
+        .sectionC {
+          height: 10%;
+          border: 1px solid white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,513 @@
+/* Base Styles & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  overflow-y: scroll;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================================
+   Top Navigation Bar
+========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  background-color: #0f0f0f;
+  z-index: 100;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  margin-left: 16px;
+}
+
+.yt-icon {
+  color: #ff0000;
+}
+
+.country-code {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: -10px;
+}
+
+.nav-center {
+  flex: 1;
+  max-width: 720px;
+  margin: 0 40px;
+  gap: 16px;
+}
+
+.search-bar {
+  display: flex;
+  flex: 1;
+  height: 40px;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: #121212;
+  border: 1px solid #303030;
+  border-radius: 40px 0 0 40px;
+  padding: 0 16px;
+  color: white;
+  font-size: 16px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #1c62b9;
+}
+
+.search-btn {
+  width: 64px;
+  background-color: #222222;
+  border: 1px solid #303030;
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+}
+
+.mic-btn {
+  background-color: #181818;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav-right {
+  gap: 12px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.icon-btn:hover {
+  background-color: #272727;
+}
+
+.notification-btn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: #cc0000;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 10px;
+  border: 2px solid #0f0f0f;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #7b52c6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Common Buttons */
+.pill-btn {
+  background-color: #272727;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill-btn:hover {
+  background-color: #3f3f3f;
+}
+
+/* =========================================
+   Main Content Layout
+========================================= */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  gap: 24px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* -- Left Column (Video) -- */
+.primary-column {
+  flex: 1;
+  max-width: 1280px;
+  min-width: 640px;
+}
+
+.video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e6f0ff; /* Simulating the bright ad background */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ad-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ad-logo {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  color: #14a085;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.ad-text p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ad-text small {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.download-btn {
+  background-color: white;
+  color: #0f0f0f;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.video-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.video-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.channel-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #1abc9c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.channel-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-text span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.subscribe-btn {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 18px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.pill-group {
+  display: flex;
+  background-color: #272727;
+  border-radius: 18px;
+}
+
+.pill-btn-left,
+.pill-btn-right {
+  padding: 0 16px;
+  height: 36px;
+}
+
+.pill-btn-left {
+  border-radius: 18px 0 0 18px;
+  border-right: 1px solid #3f3f3f;
+}
+
+.pill-btn-right {
+  border-radius: 0 18px 18px 0;
+}
+
+/* -- Right Column (Sidebar) -- */
+.secondary-column {
+  width: 402px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-ad {
+  border: 1px solid #303030;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ad-banner {
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f0f0f;
+}
+
+.ad-details {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #14a085;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ad-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-info span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.download-btn.dark {
+  background-color: #272727;
+  color: #f1f1f1;
+}
+
+/* Chips */
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filter-chips::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.chip {
+  background-color: #272727;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.chip.active {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+}
+
+/* Related Videos */
+.related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.related-item {
+  display: flex;
+  gap: 8px;
+}
+
+.thumbnail {
+  width: 168px;
+  height: 94px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+}
+
+.thumb-placeholder.white-bg {
+  background-color: white;
+  color: black;
+}
+.thumb-placeholder.purple-bg {
+  background-color: #2c0e4c;
+  color: white;
+}
+.thumb-placeholder.blue-bg {
+  background-color: #1952a1;
+  color: white;
+}
+
+.timestamp {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-info span {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.learn-more-btn {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+  align-self: flex-start;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.v-align-top {
+  align-items: flex-start;
+  height: auto;
+  padding-top: 4px;
+}
+
+/* Responsive constraints */
+@media (max-width: 1000px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  .secondary-column {
+    width: 100%;
+  }
+}

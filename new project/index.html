@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Youtube Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <div class="navleft">
+        <div class="menubtn iconbtn"><i class="bi bi-list"></i></div>
+        <div class="logo">
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              display: block;
+              fill: currentcolor;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="yt-ringo2-svg_yt10"
+              width="93"
+              height="20"
+              viewBox="0 0 93 20"
+              focusable="false"
+              aria-hidden="true"
+              style="
+                pointer-events: none;
+                display: inherit;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <g>
+                <path
+                  d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                  fill="#FF0033"
+                ></path>
+                <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+              </g>
+              <g id="youtube-paths_yt10">
+                <path
+                  d="M37.1384 18.8999V13.4399L40.6084 2.09994H38.0184L36.6984 7.24994C36.3984 8.42994 36.1284 9.65994 35.9284 10.7999H35.7684C35.6584 9.79994 35.3384 8.48994 35.0184 7.22994L33.7384 2.09994H31.1484L34.5684 13.4399V18.8999H37.1384Z"
+                ></path>
+                <path
+                  d="M44.1003 6.29994C41.0703 6.29994 40.0303 8.04994 40.0303 11.8199V13.6099C40.0303 16.9899 40.6803 19.1099 44.0403 19.1099C47.3503 19.1099 48.0603 17.0899 48.0603 13.6099V11.8199C48.0603 8.44994 47.3803 6.29994 44.1003 6.29994ZM45.3903 14.7199C45.3903 16.3599 45.1003 17.3899 44.0503 17.3899C43.0203 17.3899 42.7303 16.3499 42.7303 14.7199V10.6799C42.7303 9.27994 42.9303 8.02994 44.0503 8.02994C45.2303 8.02994 45.3903 9.34994 45.3903 10.6799V14.7199Z"
+                ></path>
+                <path
+                  d="M52.2713 19.0899C53.7313 19.0899 54.6413 18.4799 55.3913 17.3799H55.5013L55.6113 18.8999H57.6012V6.53994H54.9613V16.4699C54.6812 16.9599 54.0312 17.3199 53.4212 17.3199C52.6512 17.3199 52.4113 16.7099 52.4113 15.6899V6.53994H49.7812V15.8099C49.7812 17.8199 50.3613 19.0899 52.2713 19.0899Z"
+                ></path>
+                <path
+                  d="M62.8261 18.8999V4.14994H65.8661V2.09994H57.1761V4.14994H60.2161V18.8999H62.8261Z"
+                ></path>
+                <path
+                  d="M67.8728 19.0899C69.3328 19.0899 70.2428 18.4799 70.9928 17.3799H71.1028L71.2128 18.8999H73.2028V6.53994H70.5628V16.4699C70.2828 16.9599 69.6328 17.3199 69.0228 17.3199C68.2528 17.3199 68.0128 16.7099 68.0128 15.6899V6.53994H65.3828V15.8099C65.3828 17.8199 65.9628 19.0899 67.8728 19.0899Z"
+                ></path>
+                <path
+                  d="M80.6744 6.26994C79.3944 6.26994 78.4744 6.82994 77.8644 7.73994H77.7344C77.8144 6.53994 77.8744 5.51994 77.8744 4.70994V1.43994H75.3244L75.3144 12.1799L75.3244 18.8999H77.5444L77.7344 17.6999H77.8044C78.3944 18.5099 79.3044 19.0199 80.5144 19.0199C82.5244 19.0199 83.3844 17.2899 83.3844 13.6099V11.6999C83.3844 8.25994 82.9944 6.26994 80.6744 6.26994ZM80.7644 13.6099C80.7644 15.9099 80.4244 17.2799 79.3544 17.2799C78.8544 17.2799 78.1644 17.0399 77.8544 16.5899V9.23994C78.1244 8.53994 78.7244 8.02994 79.3944 8.02994C80.4744 8.02994 80.7644 9.33994 80.7644 11.7299V13.6099Z"
+                ></path>
+                <path
+                  d="M92.6517 11.4999C92.6517 8.51994 92.3517 6.30994 88.9217 6.30994C85.6917 6.30994 84.9717 8.45994 84.9717 11.6199V13.7899C84.9717 16.8699 85.6317 19.1099 88.8417 19.1099C91.3817 19.1099 92.6917 17.8399 92.5417 15.3799L90.2917 15.2599C90.2617 16.7799 89.9117 17.3999 88.9017 17.3999C87.6317 17.3999 87.5717 16.1899 87.5717 14.3899V13.5499H92.6517V11.4999ZM88.8617 7.96994C90.0817 7.96994 90.1717 9.11994 90.1717 11.0699V12.0799H87.5717V11.0699C87.5717 9.13994 87.6517 7.96994 88.8617 7.96994Z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <span class="countrycode">NG</span>
+      </div>
+
+      <div class="navcenter">
+        <div class="searchbar">
+          <input type="text" placeholder="Search" />
+          <button class="searchbtn"><i class="bi bi-search"></i></button>
+        </div>
+        <button class="iconbtn micbtn"><i class="bi bi-mic-fill"></i></button>
+      </div>
+
+      <div class="navright">
+        <button class="createbtn"><i class="bi bi-plus-lg"></i> Create</button>
+        <button class="iconbtn notifybtn">
+          <i class="bi bi-bell"></i><span class="badge">9+</span>
+        </button>
+
+        <div class="profile-container">
+          <div class="profile" id="profile-btn">
+            <i class="bi bi-person-fill"></i>
+          </div>
+
+          <div class="profile-dropdown" id="profile-dropdown">
+            <div class="dropdown-header">
+              <div class="profile-large"><i class="bi bi-person-fill"></i></div>
+              <div class="user-info">
+                <p class="user-name">Enikuomehin Daniel</p>
+                <p class="user-handle">@daniel_dev</p>
+                <a href="#">View your channel</a>
+              </div>
+            </div>
+            <hr />
+            <button class="dropdown-item">
+              <i class="bi bi-google"></i> Google Account
+            </button>
+            <button class="dropdown-item">
+              <i class="bi bi-box-arrow-right"></i> Sign out
+            </button>
+            <hr />
+            <button class="dropdown-item">
+              <i class="bi bi-moon"></i> Appearance: Device theme
+            </button>
+            <button class="dropdown-item">
+              <i class="bi bi-gear"></i> Settings
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <button class="sidebtn active">
+          <i class="bi bi-house-door-fill"></i> <span>Home</span>
+        </button>
+        <button class="sidebtn">
+          <i class="bi bi-lightning-charge"></i> <span>Shorts</span>
+        </button>
+        <button class="sidebtn">
+          <i class="bi bi-collection-play"></i> <span>Subscriptions</span>
+        </button>
+      </div>
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-section">
+        <button class="sidebtn">
+          <i class="bi bi-person-square"></i> <span>You</span>
+        </button>
+        <button class="sidebtn extra-item">
+          <i class="bi bi-clock-history"></i> <span>History</span>
+        </button>
+        <button class="sidebtn extra-item">
+          <i class="bi bi-play-btn"></i> <span>Your videos</span>
+        </button>
+        <button class="sidebtn extra-item">
+          <i class="bi bi-clock"></i> <span>Watch later</span>
+        </button>
+        <button class="sidebtn extra-item">
+          <i class="bi bi-hand-thumbs-up"></i> <span>Liked videos</span>
+        </button>
+      </div>
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-section extra-item">
+        <h4 class="sidebar-heading">Explore</h4>
+        <button class="sidebtn">
+          <i class="bi bi-fire"></i> <span>Trending</span>
+        </button>
+        <button class="sidebtn">
+          <i class="bi bi-music-note"></i> <span>Music</span>
+        </button>
+        <button class="sidebtn">
+          <i class="bi bi-controller"></i> <span>Gaming</span>
+        </button>
+        <button class="sidebtn">
+          <i class="bi bi-trophy"></i> <span>Sports</span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <div class="subjects">
+        <button class="subbtn active">All</button>
+        <button class="subbtn">Music</button>
+        <button class="subbtn">Podcasts</button>
+        <button class="subbtn">User interface design</button>
+        <button class="subbtn">Gaming</button>
+        <button class="subbtn">Live</button>
+        <button class="subbtn">Web Pages</button>
+        <button class="subbtn">Universe</button>
+        <button class="subbtn">Mixes</button>
+        <button class="subbtn">React</button>
+        <button class="subbtn">JavaScript</button>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="thumbnail-container">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Ad Thumbnail"
+              class="thumbnail-img"
+            />
+            <div class="overlay-icon"><i class="bi bi-arrow-up-right"></i></div>
+          </div>
+          <div class="video-details">
+            <img
+              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="Sponsor"
+              class="channel-logo"
+            />
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">
+                  Build 4x Faster. Wispr Flow is the Voice-First Writing Tool
+                  Built for Developers.
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">
+                <strong>Sponsored</strong> &bull; Wispr Flow
+              </p>
+              <div class="action-buttons">
+                <button class="btn-watch">Watch</button>
+                <button class="btn-visit">Visit site</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail-container playlist-stack">
+            <img
+              src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Playlist Thumbnail"
+              class="thumbnail-img"
+            />
+            <div class="overlay-badge">
+              <i class="bi bi-list"></i> 13 videos
+            </div>
+          </div>
+          <div class="video-details no-logo">
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">Popular Videos</h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">
+                Flux Academy
+                <i class="bi bi-check-circle-fill verified-icon"></i> &bull;
+                Playlist
+              </p>
+              <a href="#" class="playlist-link">View full playlist</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail-container">
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Video Thumbnail"
+              class="thumbnail-img"
+            />
+            <div class="overlay-badge">43:21</div>
+          </div>
+          <div class="video-details">
+            <img
+              src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="Channel Logo"
+              class="channel-logo"
+            />
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">
+                  Figma tutorial for Beginners: Complete Website from Start to
+                  Finish
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">
+                Flux Academy
+                <i class="bi bi-check-circle-fill verified-icon"></i>
+              </p>
+              <p class="meta-text">3M views &bull; 3 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shorts-section">
+        <div class="shorts-header">
+          <div class="shorts-title">
+            <i class="bi bi-play-btn-fill shorts-logo"></i>
+            <h2>Shorts</h2>
+          </div>
+          <i class="bi bi-three-dots-vertical menu-icon"></i>
+        </div>
+
+        <div class="shorts-grid">
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Short Thumbnail"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">This Angel is WORSE Than Demons 😳</h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">1.1M views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Short Thumbnail"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  Some Galaxies Are Already Gone Forever
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">8.9K views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Short Thumbnail"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  Which element is the strongest in avatar?
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">199K views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1560972550-aba3456b5564?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Short Thumbnail"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  The only fight Sukuna took seriously
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">2M views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Short Thumbnail"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  If we scale our Galaxy to the size of north ...
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">4.1M views</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-grid" style="margin-top: 40px">
+        <div class="video-card">
+          <div class="thumbnail-container">
+            <img
+              src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="React Tutorial"
+              class="thumbnail-img"
+            />
+            <div class="overlay-badge">1:15:08</div>
+          </div>
+          <div class="video-details">
+            <img
+              src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="Channel Logo"
+              class="channel-logo"
+            />
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">
+                  React Full Course 2026 | Build a SaaS App from Scratch
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">
+                CodeMaster <i class="bi bi-check-circle-fill verified-icon"></i>
+              </p>
+              <p class="meta-text">120K views &bull; 2 weeks ago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail-container">
+            <img
+              src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Desk Setup"
+              class="thumbnail-img"
+            />
+            <div class="overlay-badge">12:34</div>
+          </div>
+          <div class="video-details">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="Channel Logo"
+              class="channel-logo"
+            />
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">
+                  My Ultimate Productivity Desk Setup (Deep Work)
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">Tech & Flow</p>
+              <p class="meta-text">850K views &bull; 1 month ago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="thumbnail-container playlist-stack">
+            <img
+              src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Gaming Playlist"
+              class="thumbnail-img"
+            />
+            <div class="overlay-badge">
+              <i class="bi bi-list"></i> 24 videos
+            </div>
+          </div>
+          <div class="video-details no-logo">
+            <div class="video-info">
+              <div class="title-row">
+                <h3 class="video-title">Chill Indie Games to Relax To</h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="meta-text">CozyGamer &bull; Playlist</p>
+              <a href="#" class="playlist-link">View full playlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shorts-section">
+        <div class="shorts-header">
+          <div class="shorts-title">
+            <i class="bi bi-play-btn-fill shorts-logo"></i>
+            <h2>More Shorts</h2>
+          </div>
+          <i class="bi bi-three-dots-vertical menu-icon"></i>
+        </div>
+
+        <div class="shorts-grid">
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Coding Tip"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  5 VS Code Shortcuts to Code Faster ⚡️
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">450K views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Cooking"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  Make a healthy lunch in under 5 minutes 🥗
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">1.2M views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Workout"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  Do this stretch every morning to fix posture
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">3.4M views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1595225476474-87563907a212?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Keyboard"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">
+                  Custom Mechanical Keyboard ASMR (Creamy)
+                </h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">890K views</p>
+            </div>
+          </div>
+
+          <div class="short-card">
+            <div class="short-thumbnail-container">
+              <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=700&q=80"
+                alt="Tech"
+                class="short-img"
+              />
+            </div>
+            <div class="short-info">
+              <div class="short-title-row">
+                <h3 class="short-title">Don't buy this phone in 2026... 🛑</h3>
+                <i class="bi bi-three-dots-vertical menu-icon"></i>
+              </div>
+              <p class="short-views">2.1M views</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-more-container">
+          <button class="btn-show-more">
+            Show more <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

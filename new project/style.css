@@ -1,0 +1,854 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  overflow-y: scroll;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f0f0f;
+  padding: 0 16px;
+  z-index: 100;
+}
+
+.navleft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 90px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.countrycode {
+  font-family: sans-serif;
+  font-size: 10px;
+  color: #aaaaaa;
+  margin-bottom: 10px;
+  margin-left: 4px;
+}
+
+.navcenter {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 720px;
+  margin: 0 40px;
+}
+
+.searchbar {
+  display: flex;
+  flex: 1;
+  height: 40px;
+}
+
+.searchbar input {
+  flex: 1;
+  background-color: #121212;
+  border: 1px solid #303030;
+  border-radius: 40px 0 0 40px;
+  padding: 0 16px;
+  color: white;
+  font-size: 16px;
+}
+
+.searchbar input:focus {
+  border-color: #1c62b9;
+  outline: none;
+}
+
+.searchbtn {
+  width: 64px;
+  background-color: #222222;
+  border: 1px solid #303030;
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+  color: white;
+  cursor: pointer;
+}
+
+.micbtn {
+  margin-left: 16px;
+  background-color: #181818;
+  border: none;
+}
+
+.navright {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.createbtn {
+  background-color: #272727;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.createbtn:hover {
+  background-color: #3f3f3f;
+}
+
+.iconbtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.iconbtn:hover {
+  background-color: #272727;
+}
+
+.notifybtn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: #cc0000;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 10px;
+  border: 2px solid #0f0f0f;
+}
+
+.profile {
+  width: 32px;
+  height: 32px;
+  background-color: #7b52c6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 72px;
+  height: calc(100vh - 56px);
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+  z-index: 90;
+  overflow-y: auto; /* Lets the sidebar scroll independently */
+  overflow-x: hidden;
+  scrollbar-width: thin; /* Firefox scrollbar */
+  scrollbar-color: #717171 transparent;
+}
+
+/* Chrome/Safari/Edge custom scrollbar for the sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Hides it until hover */
+  border-radius: 4px;
+}
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background-color: #717171; /* Shows grey scrollbar only when hovering */
+}
+
+.sidebtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 64px;
+  height: 74px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.sidebtn i {
+  font-size: 24px;
+}
+
+.sidebtn:hover {
+  background-color: #272727;
+}
+
+main {
+  margin-top: 56px;
+  margin-left: 72px;
+  padding: 0 24px;
+}
+
+.subjects {
+  position: sticky;
+  top: 56px;
+  background-color: #0f0f0f;
+  padding: 12px 0;
+  z-index: 80;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.subjects::-webkit-scrollbar {
+  display: none;
+}
+
+.subbtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #272727;
+  color: #f1f1f1;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.subbtn:hover {
+  background-color: #3f3f3f;
+}
+
+.subbtn.active {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  max-width: 100%;
+  margin: 24px 0;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0.3s ease;
+  border-radius: 20px;
+}
+
+.video-card:hover {
+  background-color: #7e7c7c;
+}
+
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.overlay-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  z-index: 3;
+}
+
+.overlay-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 3;
+}
+
+.playlist-stack {
+  margin-top: 8px;
+}
+
+.playlist-stack::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 4%;
+  width: 92%;
+  height: 100%;
+  background-color: #3f3f3f;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.video-details {
+  display: flex;
+  gap: 12px;
+}
+
+.video-details.no-logo {
+  padding-left: 0;
+}
+
+.channel-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+.meta-text {
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.meta-text strong {
+  color: #f1f1f1;
+}
+
+.verified-icon {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.playlist-link {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 6px;
+  text-decoration: none;
+}
+
+.playlist-link:hover {
+  color: #f1f1f1;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.action-buttons button {
+  padding: 8px 16px;
+  border-radius: 18px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-watch {
+  background-color: #272727;
+  color: white;
+  flex-grow: 1;
+}
+.btn-visit {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+  flex-grow: 1.5;
+}
+
+.shorts-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 24px;
+  border-top: 4px solid #272727;
+}
+
+.shorts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.shorts-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shorts-title h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f1f1f1;
+}
+
+.shorts-logo {
+  color: #ff0000;
+  font-size: 24px;
+}
+
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.short-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.short-card:hover {
+  transform: translateY(-5px);
+}
+
+.short-thumbnail-container {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.short-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.short-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.short-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.short-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f1f1f1;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.short-views {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 6px;
+}
+
+.show-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  padding-bottom: 12px;
+}
+
+.btn-show-more {
+  background-color: transparent;
+  color: #f1f1f1;
+  border: 1px solid #3f3f3f;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-show-more:hover {
+  background-color: #272727;
+  border-color: transparent;
+}
+
+.btn-show-more i {
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* ========================================= */
+/* --- PROFILE DROPDOWN STYLES --- */
+/* ========================================= */
+.profile-container {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 300px;
+  background-color: #272727;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  z-index: 200;
+  padding: 8px 0;
+}
+
+/* This is the class the JavaScript adds! */
+.profile-dropdown.show {
+  display: flex;
+}
+
+.dropdown-header {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.profile-large {
+  width: 40px;
+  height: 40px;
+  background-color: #7b52c6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.user-info p {
+  margin-bottom: 4px;
+}
+.user-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+.user-handle {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+.user-info a {
+  font-size: 14px;
+  color: #3ea6ff;
+  text-decoration: none;
+}
+.user-info a:hover {
+  text-decoration: underline;
+}
+
+.profile-dropdown hr {
+  border: none;
+  border-top: 1px solid #3f3f3f;
+  margin: 8px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: #f1f1f1;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-item i {
+  font-size: 20px;
+}
+.dropdown-item:hover {
+  background-color: #3f3f3f;
+}
+
+/* ========================================= */
+/* --- SIDEBAR EXPANDED & OVERLAY STYLES --- */
+/* ========================================= */
+.sidebar-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 85;
+}
+
+/* This is the class the JavaScript adds! */
+.sidebar-overlay.show {
+  display: block;
+}
+
+.sidebar-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* This is the class the JavaScript adds to the sidebar! */
+.sidebar.expanded {
+  width: 240px;
+  align-items: flex-start;
+  padding: 12px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+.sidebar.expanded .sidebar-section {
+  align-items: flex-start;
+}
+
+.sidebar.expanded .sidebtn {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
+  padding-left: 12px;
+  border-radius: 10px;
+}
+
+.sidebar.expanded .sidebtn span {
+  display: inline;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.sidebar-heading {
+  display: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px 8px 24px;
+  margin-top: 8px;
+  color: #f1f1f1;
+}
+
+.sidebar.expanded .sidebar-heading {
+  display: block;
+}
+
+.extra-item,
+.sidebar-divider {
+  display: none;
+}
+
+.sidebar.expanded .extra-item {
+  display: flex;
+}
+
+.sidebar.expanded .sidebar-divider {
+  display: block;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #3f3f3f;
+  margin: 12px 0;
+}
+
+/* ========================================= */
+/* --- RESPONSIVE DESIGN (MOBILE FIXES)  --- */
+/* ========================================= */
+@media (max-width: 768px) {
+  /* --- 1. SIDEBAR SLIDE-IN MENU --- */
+  .sidebar {
+    /* Hide it off the left edge of the screen */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 240px;
+    align-items: flex-start;
+    padding: 12px;
+    z-index: 95; /* Keeps it above the dark overlay */
+  }
+
+  /* JavaScript adds this class to slide it in */
+  .sidebar.expanded {
+    transform: translateX(0);
+  }
+
+  .sidebar .sidebtn {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    padding-left: 12px;
+  }
+
+  .sidebar .sidebtn span {
+    display: inline;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+
+  .sidebar-divider {
+    display: block;
+  }
+
+  /* --- 2. MAIN CONTENT OFFSET --- */
+  main {
+    margin-left: 0 !important;
+    padding: 0 16px;
+  }
+
+  /* --- 3. HEADER ICONS FIX --- */
+  .navcenter {
+    margin: 0 8px 0 0;
+    justify-content: flex-end;
+  }
+
+  .searchbar {
+    flex: 0 auto;
+  }
+
+  .searchbar input {
+    display: none; /* Hides the long text bar */
+  }
+
+  .searchbtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+  }
+
+  .searchbtn:hover {
+    background-color: #272727;
+  }
+
+  .micbtn {
+    margin-left: 8px;
+    background-color: transparent;
+  }
+
+  .createbtn {
+    font-size: 0; /* Hides the word "Create" */
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: transparent;
+  }
+
+  .createbtn i {
+    font-size: 20px; /* Keeps the + icon visible */
+  }
+
+  /* --- 4. GRID RE-SIZING --- */
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .shorts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  /* Only force a single column when we hit actual mobile phone sizes */
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

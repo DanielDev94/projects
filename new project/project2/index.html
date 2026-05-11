@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>OVZA LLC | Offshore Company</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="trackModal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn">&times;</button>
+        <h2>Track Your Order</h2>
+        <p>Enter your details to access your dashboard</p>
+
+        <input type="text" class="modal-input" placeholder="Order Identifier" />
+        <input type="email" class="modal-input" placeholder="Email Address" />
+
+        <div class="security-challenge">
+          <p>🔒 Security Challenge</p>
+          <label>Solve this simple math problem to continue:</label>
+          <div class="math-row">
+            <span id="mathQuestion">Loading...</span>
+            <input type="number" id="mathAnswer" placeholder="?" />
+          </div>
+        </div>
+
+        <button class="modal-btn">Open Dashboard</button>
+        <a href="#" class="retrieve-id">Lost your ID? Click here</a>
+      </div>
+    </div>
+    <header class="topbar">
+      <div class="logo">
+        <img
+          src="https://ovza.com/wp-content/uploads/2024/03/mainlogo-e1771920233274.png"
+          alt="OVZA Logo"
+          class="nav-logo"
+          width="150"
+          height="50"
+          style="aspect-ratio: 600/203"
+        />
+      </div>
+
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Countries</a>
+        <a href="#">Partner</a>
+        <a href="#">Tools</a>
+        <a href="#">Resources</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="track-order-link">Track Order</a>
+        <a href="#" class="contact-btn">Contact Us</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="bg-img">
+        <img
+          src="https://ovza.com/wp-content/uploads/2025/09/cropped-favicon-512x512-1.png"
+          alt="background Img"
+        />
+      </div>
+      <div class="others">
+        <h1 class="intro">
+          Register an Offshore Company with OVZA's International Solutions
+        </h1>
+        <p class="description">
+          OVZA specializes in offshore company formation and assists clients
+          with applying for corporate offshore bank accounts.
+        </p>
+
+        <div class="ready">
+          <p>
+            Ready to incorporate offshore?
+            <span class="begin">Begin here!</span>
+          </p>
+        </div>
+
+        <div class="search-form">
+          <div class="custom-dropdown">
+            <div class="select-country" id="countrySelector">
+              <span id="selectedCountry">Select Country</span>
+              <i class="bi bi-caret-down-fill"></i>
+            </div>
+            <ul class="dropdown-list" id="countryList">
+              <li>Bahamas</li>
+              <li>Belize</li>
+              <li>British Virgin Islands</li>
+              <li>Cayman Islands</li>
+              <li>Panama</li>
+              <li>Seychelles</li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <input
+            class="searchbar"
+            type="text"
+            placeholder="Type your desired company name here"
+          />
+          <button class="register-btn">Register Your Company</button>
+        </div>
+
+        <div class="sponsorlogo">
+          <img
+            width="150"
+            height="50"
+            style="aspect-ratio: 1277/460"
+            src="https://ovza.com/wp-content/uploads/2025/08/LEI-badge-595xh.png"
+            alt="LEI Badge"
+          />
+        </div>
+
+        <div class="support-countries">
+          Supported Countries <i class="bi bi-arrow-down-short"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="services-header">
+        <h2>Our Services</h2>
+        <p>
+          Choose OVZA now to ensure a seamless company formation process and
+          legal compliance.
+        </p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="servicesTrack">
+          <div class="service-card">
+            <i class="bi bi-buildings"></i>
+            <h3>Offshore Company Formation</h3>
+            <p>
+              Set up your offshore company with OVZA's efficient and secure
+              incorporation services.
+            </p>
+            <a href="#" class="learn-more"
+              >Register now <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-bank"></i>
+            <h3>Bank Account Support</h3>
+            <p>
+              Apply for offshore bank accounts through a network of trusted
+              international banks.
+            </p>
+            <a href="#" class="learn-more"
+              >Open account <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-file-earmark-check"></i>
+            <h3>24/7 Document Notarization</h3>
+            <p>
+              Certify your proof of identity and address securely in under 5
+              minutes.
+            </p>
+            <a href="#" class="learn-more"
+              >Notarize <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-globe-americas"></i>
+            <h3>Offshore Redomiciliation</h3>
+            <p>
+              Move your existing company from one jurisdiction to a more
+              favorable offshore one.
+            </p>
+            <a href="#" class="learn-more"
+              >Learn more <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-shield-lock"></i>
+            <h3>Nominee Services</h3>
+            <p>
+              Enhance your corporate privacy and security with our professional
+              nominee directors.
+            </p>
+            <a href="#" class="learn-more"
+              >Protect privacy <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-calculator"></i>
+            <h3>Tax Planning Strategy</h3>
+            <p>
+              Optimize your global tax footprint with legally compliant
+              international structuring.
+            </p>
+            <a href="#" class="learn-more"
+              >Plan strategy <i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="countries-banner-section">
+      <div class="countries-banner">
+        <div class="banner-title">
+          <h2>16 Countries Supported by OVZA for Offshore Company Formation</h2>
+        </div>
+        <div class="banner-text">
+          <p>
+            OVZA extends its expertise across continents,
+            <strong
+              >offering offshore company formation and banking support</strong
+            >
+            in a diversified portfolio of jurisdictions.
+          </p>
+          <p>
+            From the Americas to Asia Pacific and Europe, our services cater to
+            a vast array of strategic locations including Anguilla, the British
+            Virgin Islands, Belize, and beyond.
+            <strong
+              >We enable you to establish a business presence in the world's
+              most advantageous regions.</strong
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="map-section">
+      <div class="map-container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+          alt="World Map"
+          class="world-map-img"
+        />
+        <div class="map-pin panama-pin"><span>Panama</span></div>
+        <div class="map-pin seychelles-pin"><span>Seychelles</span></div>
+        <div class="map-pin bvi-pin"><span>BVI</span></div>
+      </div>
+
+      <div class="regions-container">
+        <div class="region-column">
+          <h3>The Americas</h3>
+          <ul class="country-list two-columns">
+            <li><span>🇦🇮</span> Anguilla</li>
+            <li><span>🇦🇬</span> Antigua & Barbuda</li>
+            <li><span>🇧🇸</span> Bahamas</li>
+            <li><span>🇧🇿</span> Belize</li>
+            <li><span>🇻🇬</span> British Virgin Islands</li>
+            <li><span>🇰🇾</span> Cayman Islands</li>
+            <li><span>🇨🇷</span> Costa Rica</li>
+            <li><span>🇵🇦</span> Panama</li>
+            <li><span>🇰🇳</span> St. Kitts & Nevis</li>
+            <li><span>🇱🇨</span> St. Lucia</li>
+            <li><span>🇻🇨</span> St. Vincent</li>
+          </ul>
+        </div>
+
+        <div class="region-column">
+          <h3>Asia Pacific</h3>
+          <ul class="country-list">
+            <li><span>🇨🇰</span> Cook Islands</li>
+            <li><span>🇲🇭</span> Marshall Islands</li>
+            <li><span>🇼🇸</span> Samoa</li>
+            <li><span>🇻🇺</span> Vanuatu</li>
+          </ul>
+        </div>
+
+        <div class="region-column">
+          <h3>Africa</h3>
+          <ul class="country-list">
+            <li><span>🇸🇨</span> Seychelles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="detailed-services-section">
+      <div class="services-header">
+        <h2>Our Services</h2>
+        <p>
+          Choose OVZA now to ensure a seamless company formation process and
+          legal compliance, guaranteeing a smooth experience as you fulfill your
+          company objectives effectively.
+        </p>
+      </div>
+
+      <div class="detailed-services-container">
+        <div class="service-row">
+          <div class="service-text-card">
+            <div class="service-icon"><i class="bi bi-gear"></i></div>
+            <h3>Offshore Company Formation</h3>
+            <p>
+              Set up your offshore company with OVZA's efficient and secure
+              offshore incorporation services. We specialize in forming
+              international business entities across 16 trusted jurisdictions.
+              Our fully digital process ensures fast, compliant, and hassle-free
+              registration.
+            </p>
+            <p>
+              With OVZA, you'll receive expert guidance, clear documentation,
+              and ongoing support to meet international legal and regulatory
+              standards—so you can focus on growing your business globally.
+            </p>
+          </div>
+          <div class="service-image-box">
+            <img
+              src="https://placehold.co/600x400/e6f4f1/0f172a?text=Illustration:+Company+Formation"
+              alt="Company Formation"
+              class="service-img"
+            />
+          </div>
+        </div>
+
+        <div class="service-row reverse">
+          <div class="service-text-card">
+            <div class="service-icon"><i class="bi bi-bank"></i></div>
+            <h3>Bank Account Opening Support</h3>
+            <p>
+              OVZA helps you apply for offshore bank accounts through a network
+              of trusted international banks and Electronic Money Institutions
+              (EMIs). We match you with the right banking partner based on your
+              business profile and jurisdiction.
+            </p>
+            <p>
+              Our team provides step-by-step guidance throughout the application
+              process, ensuring compliance and efficiency. With OVZA, your
+              offshore finances are supported by reliable institutions that
+              value privacy, security, and global accessibility.
+            </p>
+          </div>
+          <div class="service-image-box">
+            <img
+              src="https://placehold.co/600x400/e6f4f1/0f172a?text=Illustration:+Banking+Support"
+              alt="Banking Support"
+              class="service-img"
+            />
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-text-card">
+            <div class="service-icon">
+              <i class="bi bi-file-earmark-check"></i>
+            </div>
+            <h3>24/7 Document Notarization</h3>
+            <p>
+              Certify your proof of identity and proof of address in under 5
+              minutes through OVZA's secure digital notarization system. Our
+              streamlined process eliminates the need to visit a lawyer or
+              government office, allowing your documents to be notarized
+              efficiently and without delay.
+            </p>
+            <p>
+              Notarization is a mandatory step for offshore company
+              incorporation and international compliance. OVZA ensures your
+              documents are processed accurately, securely, and in full
+              alignment with jurisdictional requirements.
+            </p>
+          </div>
+          <div class="service-image-box">
+            <img
+              src="https://placehold.co/600x400/e6f4f1/0f172a?text=Illustration:+Document+Notarization"
+              alt="Document Notarization"
+              class="service-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-ovza-section">
+      <div class="why-header">
+        <h2>Why Work With OVZA?</h2>
+        <p>
+          OVZA is trusted by global entrepreneurs for reliable offshore company
+          formation and international structuring. We work with leading law
+          firms, banks, and registrars in 16 jurisdictions to deliver secure,
+          compliant, and efficient results.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <h3>End to End Offshore Solutions</h3>
+          <p>
+            From company setup to bank account opening, we handle everything, so
+            you don't have to.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-globe"></i>
+          </div>
+          <h3>Global Expertise, Local Insight</h3>
+          <p>
+            Our team understands the intricacies of international jurisdictions
+            and compliance.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-phone"></i>
+          </div>
+          <h3>Offshore Banking Access Made Simple</h3>
+          <p>
+            We connect you with reputable banks offering multi-currency accounts
+            and SWIFT capabilities.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+          <h3>Fast & Efficient Incorporation</h3>
+          <p>
+            Launch your offshore company quickly with minimal paperwork and
+            maximum support.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-layers"></i>
+          </div>
+          <h3>Tailored Structures for Global Growth</h3>
+          <p>
+            We help design corporate setups aligned with your business goals and
+            cross-border needs.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="card-illustration">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Trusted by Entrepreneurs Worldwide</h3>
+          <p>
+            Join clients from 50+ countries who rely on OVZA for secure,
+            strategic offshore solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials-section">
+      <div class="testimonials-header">
+        <h2>What Clients Are Saying.</h2>
+        <p>
+          Trusted by entrepreneurs worldwide for our reliability, discretion,
+          and offshore expertise
+        </p>
+        <div class="trust-badge">
+          <span>As seen on</span>
+          <img
+            src="https://placehold.co/150x40/ffffff/0f172a?text=Proven+Expert"
+            alt="Proven Expert"
+          />
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="review-card">
+          <p class="review-text">
+            "I highly value the support from OVZA for quick responses to my
+            questions. A pleasure to work with."
+          </p>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="client-name">Lukas S.</p>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            "Great job by OVZA for support with international tax planning. A
+            pleasure to work with."
+          </p>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="client-name">Katrin W.</p>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            "Smooth process handled by OVZA for excellent customer care. Will
+            use again for future needs."
+          </p>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+            ><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="client-name">Julia B.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <div class="about-icon"><i class="bi bi-handshake"></i></div>
+          <h2>Your Partner in Offshore Business Excellence</h2>
+          <p>
+            Since 2018, OVZA has been a trusted provider of offshore company
+            formation service provider. We help entrepreneurs and global
+            businesses establish compliant entities in top offshore
+            jurisdictions.
+          </p>
+          <p>
+            With experience across legal, financial, and operational matters,
+            OVZA offers tailored solutions that prioritize privacy, flexibility,
+            and international growth.
+          </p>
+          <p>
+            Choose OVZA to form your offshore company and apply for a reliable
+            offshore bank account.
+          </p>
+          <a href="#" class="about-btn">About OVZA</a>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://placehold.co/500x400/e6f4f1/0f172a?text=Illustration:+Trophy"
+            alt="Excellence Trophy"
+            class="service-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-banner-section">
+      <div class="stats-banner">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-award"></i></div>
+          <div class="stat-text">
+            <h3>7+</h3>
+            <p>Years of Tailoring Offshore Success</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-globe2"></i></div>
+          <div class="stat-text">
+            <h3>16</h3>
+            <p>Jurisdictions: Your Global Network</p>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="stat-text">
+            <h3>100%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="video-guide-section">
+      <div class="video-guide-container">
+        <div class="video-guide-header">
+          <h2>
+            Cut through bureaucracy with OVZA's step-by-step video guide,
+            <span class="text-light"
+              >tailored to expedite your offshore company registration and set
+              you on a path of international growth.</span
+            >
+          </h2>
+        </div>
+
+        <div class="video-guide-content">
+          <div class="video-player-box">
+            <img
+              src="https://placehold.co/800x450/ffffff/0f172a?text=OVZA+Video+Presentation"
+              alt="OVZA Video Guide"
+              class="video-thumbnail"
+            />
+            <div class="play-button">
+              <i class="bi bi-play-fill"></i>
+            </div>
+          </div>
+
+          <div class="resource-cards-box">
+            <div class="resource-card">
+              <div class="resource-icon"><i class="bi bi-book"></i></div>
+              <div class="resource-text">
+                <h3>Read our latest booklets</h3>
+                <a href="#">Click Here</a>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon"><i class="bi bi-flag"></i></div>
+              <div class="resource-text">
+                <h3>Check out our country guides</h3>
+                <a href="#">Click Here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Subscribe to the OVZA Newsletter</h2>
+          <p>
+            Join the OVZA newsletter for exclusive offshore insights, expert
+            guidance, and global growth tools. Your information is kept secure,
+            and we only send relevant, valuable content.
+          </p>
+
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter Your E-Mail" required />
+            <button type="submit">Subscribe Now</button>
+          </form>
+
+          <p class="follow-text">Follow us to get more updates!</p>
+          <div class="social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+
+        <div class="newsletter-image">
+          <img
+            src="https://placehold.co/500x350/ffffff/0f172a?text=Illustration:+Newsletter"
+            alt="Newsletter Subscription"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col contact-info">
+          <a href="#" class="footer-heading-link"><h3>About Us</h3></a>
+
+          <a href="#" class="footer-heading-link"><h3>Contact Us</h3></a>
+          <p><i class="bi bi-envelope-fill"></i> info@ovza.com</p>
+          <p>
+            <strong>Saint Vincent and the Grenadines:</strong> Euro House,<br />
+            Richmond Hill Road, Kingstown
+          </p>
+          <p><strong>LEI:</strong> 984500F5F1EB5E483F62</p>
+
+          <div class="payment-methods">
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=Visa"
+              alt="Visa"
+            />
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=MC"
+              alt="Mastercard"
+            />
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=Amex"
+              alt="Amex"
+            />
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=JCB"
+              alt="JCB"
+            />
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=Discover"
+              alt="Discover"
+            />
+            <img
+              src="https://placehold.co/65x40/ffffff/0f172a?text=UnionPay"
+              alt="UnionPay"
+            />
+            <img
+              src="https://placehold.co/215x60/ffffff/0f172a?text=Bitcoin+Accepted"
+              alt="Bitcoin"
+              class="bitcoin-badge"
+            />
+          </div>
+        </div>
+
+        <div class="footer-col links-col">
+          <div class="link-group">
+            <h3>Our Services</h3>
+            <a href="#">Offshore Incorporation</a>
+            <a href="#">Banking Support</a>
+            <a href="#">Document Notarization</a>
+          </div>
+          <div class="link-group" style="margin-top: 30px">
+            <h3>Resources</h3>
+            <a href="#">Country Guides</a>
+            <a href="#">Booklets</a>
+            <a href="#">Blog</a>
+            <a href="#">Offshore Law Library</a>
+            <a href="#">Tools</a>
+          </div>
+        </div>
+
+        <div class="footer-col links-col policy-col">
+          <h3>Terms & Policy</h3>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Anti Bribery Policy</a>
+
+          <div class="social-icons" style="margin-top: 20px">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+
+          <div class="copyscape-badge" style="margin-top: 20px">
+            <img
+              src="https://placehold.co/80x80/ffffff/0f172a?text=Copyscape"
+              alt="Protected by Copyscape"
+              style="border-radius: 50%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 OVZA – Copyright All Rights Reserved</p>
+        <p class="proudly-rooted">
+          Proudly Rooted in St. Vincent and the Grenadines <span>🇻🇨</span>
+        </p>
+      </div>
+    </footer>
+
+    <a href="#" class="floating-chat-btn">
+      <i class="bi bi-chat-dots"></i>
+    </a>
+    <script src="script.js"></script>
+  </body>
+</html>
